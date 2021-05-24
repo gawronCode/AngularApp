@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.divCenter{
+    width: 60%;
+    margin: auto;
+    background-color: red;
+    text-align: center;
+}
+
+.userDiv{
+    width: 60%;
+    margin: auto;
+    padding-bottom: 20px;
+    background-color: yellow;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.loadingDiv{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.loadingDiv  img {
+    width: 50px;
+    height: 50px;
+}
+
+.noDataDiv {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+}
