@@ -18,7 +18,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #6ba5e7;
     color: white;
   }
 
@@ -30,11 +30,9 @@
 }
 
 .loadingDiv{
-    width: 50px;
-    margin: auto;
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
-.loadingDiv img {
-    width: 50px;
+mat-progress-spinner{
+  margin: 0 auto;
 }

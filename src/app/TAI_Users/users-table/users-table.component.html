@@ -1,5 +1,5 @@
 <div *ngIf="!users" class="loadingDiv">
-    <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif">
+    <mat-progress-spinner mode="indeterminate" diameter=50></mat-progress-spinner>
 </div>
 
 <div class="noDataDiv" *ngIf="users?.length === 0">
