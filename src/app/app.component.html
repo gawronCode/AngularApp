@@ -2,22 +2,4 @@
     <h1>{{title}}</h1>
 </div>
 
-<!-- *ngIf="!users"    wyświetla gif loading jeśli users jest niezdefiniowane -->
-<div *ngIf="!users" class="loadingDiv">
-    <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif">
-</div>
-
-<div class="noDataDiv" *ngIf="users?.length === 0">
-    Brak użytkowników
-</div>
-
-<div class="userDiv" *ngFor="let user of users">
-    <ul>
-        <li>{{user.Name}}</li>
-        <li>{{user.SecondName}}</li>
-        <li>{{user.Age}}</li>
-        <li>{{user.Phone}}</li>
-        <li>{{user.Email}}</li>
-        <li>{{user.RoleName}}</li>
-    </ul>
-</div>
+<app-users-table [users]="users"></app-users-table>

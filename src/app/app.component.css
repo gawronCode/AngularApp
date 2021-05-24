@@ -15,8 +15,11 @@
 .userDiv{
     width: 60%;
     margin: auto;
-    padding-bottom: 20px;
-    background-color: yellow;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 10px;
 }
 
 ul {

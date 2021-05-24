@@ -1,0 +1,27 @@
+<div *ngIf="!users" class="loadingDiv">
+    <img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif">
+</div>
+
+<div class="noDataDiv" *ngIf="users?.length === 0">
+    Brak użytkowników
+</div>
+
+<div class="usersTableDiv"  *ngIf="users">
+    <table id="usersTab">
+        <tr>
+            <th>Id</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+            <th>Rola</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.Id}}</td>
+            <td>{{user.Name}}</td>
+            <td>{{user.SecondName}}</td>
+            <td>{{user.Email}}</td>
+            <td>{{user.RoleName}}</td> 
+        </tr>
+
+    </table>
+</div>
