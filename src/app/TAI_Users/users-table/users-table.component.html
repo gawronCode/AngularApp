@@ -23,13 +23,13 @@
             <th>Rola</th>
         </tr>
         <tr *ngFor="let user of users">
-            <td>{{user.Id}}</td>
-            <td>{{user.Name}}</td>
-            <td>{{user.SecondName}}</td>
-            <td>{{user.Age}}</td>
-            <td>{{user.Email}}</td>
-            <td>{{user.Phone}}</td>
-            <td>{{user.RoleName}}</td> 
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.secondName}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.roleName}}</td> 
             <td id="buttons">
                 <div>
                 <a mat-icon-button><mat-icon mat-button routerLink="/users/edit/1">edit</mat-icon></a>

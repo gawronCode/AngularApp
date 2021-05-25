@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { userDTO } from './users.model';
 
 @Injectable({
@@ -6,12 +9,12 @@ import { userDTO } from './users.model';
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  getAll(): userDTO[]{
-    return [{Id: 1, Name: "Jan", SecondName: "Kowalski", 
-            Age: 22, Email: "jan.kowalski@gmail.com", Phone: "123456789", 
-            RoleId:1, RoleName:"Admin", RoleAssignDate: new Date(20-10-2021)}]
+  private GetAllURL = environment.apiURL + "/Users/GetAll"
+
+  getAll(): Observable<userDTO[]>{
+    return this.httpClient.get<userDTO[]>(this.GetAllURL);
   }
 
 }

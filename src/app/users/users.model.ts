@@ -1,11 +1,11 @@
 export interface userDTO {
-    Id: number;
-    Name: string;
-    SecondName: string;
-    Age: number;
-    Phone: string;
-    Email: string;
-    RoleId: number;
-    RoleName: string;
-    RoleAssignDate: Date;
+    id: number;
+    name: string;
+    secondName: string;
+    age: number;
+    phone: string;
+    email: string;
+    roleId: number;
+    roleName: string;
+    roleAssignDate: Date;
 }
