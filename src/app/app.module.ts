@@ -10,7 +10,9 @@ import { MaterialModule} from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { UsersComponent } from './users/users.component';
 import { RolesComponent } from './roles/roles.component';
-import { RolesTableComponent } from './TAI_Roles/roles-table/roles-table.component'
+import { RolesTableComponent } from './TAI_Roles/roles-table/roles-table.component';
+import { CreateUserComponent } from './users/create-user/create-user.component';
+import { CreateRoleComponent } from './roles/create-role/create-role.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RolesTableComponent } from './TAI_Roles/roles-table/roles-table.compone
     MenuComponent,
     UsersComponent,
     RolesComponent,
-    RolesTableComponent
+    RolesTableComponent,
+    CreateUserComponent,
+    CreateRoleComponent
   ],
   imports: [
     BrowserModule,

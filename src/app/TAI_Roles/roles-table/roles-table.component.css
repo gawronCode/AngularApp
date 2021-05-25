@@ -12,12 +12,12 @@
   
   #rolesTab tr:nth-child(even){background-color: #f2f2f2;}
   
-  #rolesTab tr:hover {background-color: #ddd;}
+  #rolesTab tr:hover {background-color: rgba(140, 167, 255, 0.185);}
   
   #rolesTab th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #6ba5e7;
     color: white;
   }
@@ -44,6 +44,16 @@ mat-progress-spinner{
   margin: 0;
 }
 
-#test {
-  width: 10px;
+
+.createDiv{
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+
+#addBtn{
+  width: 48px;
+  height: 48px;
+  line-height: 46px;
+  font-size: 48px;
 }

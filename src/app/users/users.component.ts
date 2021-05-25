@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit {
         Email: "kowal@o2.pl",
         RoleName: "Gangster"
       }];
-    }, 1000);
+    }, 100);
   }
 
   users;

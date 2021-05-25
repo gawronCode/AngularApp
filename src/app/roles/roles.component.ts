@@ -24,7 +24,7 @@ export class RolesComponent implements OnInit {
         Name: "Klient",
         Description: "Konto klienta"
       }];
-    }, 1000);
+    }, 100);
   }
 
   roles;

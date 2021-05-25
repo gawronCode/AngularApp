@@ -9,15 +9,15 @@
     border: 1px solid #ddd;
     padding: 8px;
   }
-  
+
   #usersTab tr:nth-child(even){background-color: #f2f2f2;}
   
-  #usersTab tr:hover {background-color: #ddd;}
+  #usersTab tr:hover {background-color: rgba(140, 167, 255, 0.185);}
   
   #usersTab th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #6ba5e7;
     color: white;
   }
@@ -44,9 +44,6 @@ mat-progress-spinner{
   margin: 0;
 }
 
-#test {
-  width: 10px;
-}
 
 .createDiv{
   float: right;
@@ -57,7 +54,7 @@ mat-progress-spinner{
 #addBtn{
   width: 48px;
   height: 48px;
-  line-height: 44px;
+  line-height: 46px;
   font-size: 48px;
 }
 
