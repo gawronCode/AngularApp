@@ -7,13 +7,17 @@ import { UsersTableComponent } from './TAI_Users/users-table/users-table.compone
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule} from './material/material.module';
-import { MenuComponent } from './menu/menu.component'
+import { MenuComponent } from './menu/menu.component';
+import { UsersComponent } from './users/users.component';
+import { RolesComponent } from './roles/roles.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersTableComponent,
-    MenuComponent
+    MenuComponent,
+    UsersComponent,
+    RolesComponent
   ],
   imports: [
     BrowserModule,

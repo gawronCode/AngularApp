@@ -12,15 +12,25 @@
             <th>Id</th>
             <th>Imię</th>
             <th>Nazwisko</th>
+            <th>Wiek</th>
             <th>Email</th>
+            <th>Telefon</th>
             <th>Rola</th>
         </tr>
         <tr *ngFor="let user of users">
             <td>{{user.Id}}</td>
             <td>{{user.Name}}</td>
             <td>{{user.SecondName}}</td>
+            <td>{{user.Age}}</td>
             <td>{{user.Email}}</td>
+            <td>{{user.Phone}}</td>
             <td>{{user.RoleName}}</td> 
+            <td id="buttons">
+                <div>
+                <a mat-icon-button><mat-icon>edit</mat-icon></a>
+                <a mat-icon-button><mat-icon>delete</mat-icon></a>
+                </div>
+            </td>
         </tr>
 
     </table>
