@@ -1,0 +1,29 @@
+<div *ngIf="!roles" class="loadingDiv">
+    <mat-progress-spinner mode="indeterminate" diameter=50></mat-progress-spinner>
+</div>
+
+<div class="noDataDiv" *ngIf="roles?.length === 0">
+    Brak użytkowników
+</div>
+
+<div class="rolesTableDiv"  *ngIf="roles">
+    <table id="rolesTab">
+        <tr>
+            <th>Id</th>
+            <th>Nazwa</th>
+            <th>Opis</th>
+        </tr>
+        <tr *ngFor="let role of roles">
+            <td>{{role.Id}}</td>
+            <td>{{role.Name}}</td>
+            <td>{{role.Description}}</td>
+            <td id="buttons">
+                <div>
+                <a mat-icon-button><mat-icon>edit</mat-icon></a>
+                <a mat-icon-button><mat-icon>delete</mat-icon></a>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</div>

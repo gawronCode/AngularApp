@@ -1,20 +1,20 @@
 
-#usersTab {
+#rolesTab {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
-  #usersTab td, #usersTab th {
+  #rolesTab td, #rolesTab th {
     border: 1px solid #ddd;
     padding: 8px;
   }
   
-  #usersTab tr:nth-child(even){background-color: #f2f2f2;}
+  #rolesTab tr:nth-child(even){background-color: #f2f2f2;}
   
-  #usersTab tr:hover {background-color: #ddd;}
+  #rolesTab tr:hover {background-color: #ddd;}
   
-  #usersTab th {
+  #rolesTab th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -22,7 +22,7 @@
     color: white;
   }
 
-.usersTableDiv{
+.rolesTableDiv{
     margin-top: 50px;
     width: 80%;
     margin-left: auto;
@@ -47,17 +47,3 @@ mat-progress-spinner{
 #test {
   width: 10px;
 }
-
-.createDiv{
-  float: right;
-  margin-bottom: 20px;
-  margin-right: 5px;
-}
-
-#addBtn{
-  width: 48px;
-  height: 48px;
-  line-height: 44px;
-  font-size: 48px;
-}
-

@@ -14,7 +14,6 @@ export class UsersTableComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  title: string = 'TAI_Projekt';
   
   @Input()
   users;

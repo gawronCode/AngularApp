@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule} from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { UsersComponent } from './users/users.component';
-import { RolesComponent } from './roles/roles.component'
+import { RolesComponent } from './roles/roles.component';
+import { RolesTableComponent } from './TAI_Roles/roles-table/roles-table.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RolesComponent } from './roles/roles.component'
     UsersTableComponent,
     MenuComponent,
     UsersComponent,
-    RolesComponent
+    RolesComponent,
+    RolesTableComponent
   ],
   imports: [
     BrowserModule,
