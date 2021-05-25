@@ -12,7 +12,9 @@ import { UsersComponent } from './users/users.component';
 import { RolesComponent } from './roles/roles.component';
 import { RolesTableComponent } from './TAI_Roles/roles-table/roles-table.component';
 import { CreateUserComponent } from './users/create-user/create-user.component';
-import { CreateRoleComponent } from './roles/create-role/create-role.component'
+import { CreateRoleComponent } from './roles/create-role/create-role.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { EditRoleComponent } from './roles/edit-role/edit-role.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CreateRoleComponent } from './roles/create-role/create-role.component'
     RolesComponent,
     RolesTableComponent,
     CreateUserComponent,
-    CreateRoleComponent
+    CreateRoleComponent,
+    EditUserComponent,
+    EditRoleComponent
   ],
   imports: [
     BrowserModule,
