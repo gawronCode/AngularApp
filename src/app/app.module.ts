@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersTableComponent } from './TAI_Users/users-table/users-table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { MaterialModule} from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
@@ -15,7 +16,8 @@ import { RolesTableComponent } from './TAI_Roles/roles-table/roles-table.compone
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { CreateRoleComponent } from './roles/create-role/create-role.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
-import { EditRoleComponent } from './roles/edit-role/edit-role.component'
+import { EditRoleComponent } from './roles/edit-role/edit-role.component';
+import { UserFormComponent } from './users/user-form/user-form.component'
 
 @NgModule({
   declarations: [
@@ -28,14 +30,16 @@ import { EditRoleComponent } from './roles/edit-role/edit-role.component'
     CreateUserComponent,
     CreateRoleComponent,
     EditUserComponent,
-    EditRoleComponent
+    EditRoleComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

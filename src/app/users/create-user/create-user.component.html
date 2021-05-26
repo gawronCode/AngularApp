@@ -1,1 +1,50 @@
-<p>create-user works!</p>
+
+<div class="formDiv">
+    <h1>Dodaj użytkownika</h1>
+
+    <form (submit)="saveChanges()" [formGroup]="form">
+        <div class="inputDiv">
+            <mat-form-field appearance="outline">
+                <mat-label>Name*</mat-label>
+                <input formControlName='name' matInput />
+                <mat-error *ngIf="form.invalid">{{getErrorMesageFieldName()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="inputDiv">
+            <mat-form-field  appearance="outline">
+                <mat-label>Second Name*</mat-label>
+                <input formControlName='secondName' matInput />
+                <mat-error *ngIf="form.invalid">{{getErrorMesageFieldSecondName()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="inputDiv">
+            <mat-form-field  appearance="outline">
+                <mat-label>Age*</mat-label>
+                <input formControlName='age' type="number" matInput />
+                <mat-error *ngIf="form.invalid">{{getErrorMesageFieldAge()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="inputDiv">
+            <mat-form-field  appearance="outline">
+                <mat-label>Phone*</mat-label>
+                <input formControlName='phone' matInput />
+                <mat-error *ngIf="form.invalid">{{getErrorMesageFieldPhone()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="inputDiv">
+            <mat-form-field  appearance="outline">
+                <mat-label>Email*</mat-label>
+                <input formControlName='email' type="email" matInput />
+                <mat-error *ngIf="form.invalid">{{getErrorMesageFieldEmail()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="inputDiv">
+            <div class="btnDiv">
+                <button class="formBtn" mat-flat-button color="primary" [disabled]="form.invalid">Create</button>
+            </div>
+            <div class="btnDiv">
+                <a class="formBtn" mat-flat-button color="warn" routerLink="/users">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

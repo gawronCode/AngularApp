@@ -1,0 +1,25 @@
+.formDiv{
+    margin-left: 5%;
+    margin-top: 50px;
+}
+
+mat-form-field{
+    width: 500px;
+}
+
+.formBtn{
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 40px;
+}
+
+.inputDiv{
+    margin-bottom: 5px;
+}
+
+.btnDiv{
+    margin-right: 20px;
+    width: 100px;
+    float: left;
+}
