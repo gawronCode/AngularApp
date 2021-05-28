@@ -9,3 +9,11 @@ export interface userDTO {
     roleName: string;
     roleAssignDate: Date;
 }
+
+export interface userCreationDto {
+    name: string;
+    secondName: string;
+    age: number;
+    phone: string;
+    email: string;
+}

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { userCreationDto, userDTO } from '../users.model';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-edit-user',
@@ -8,12 +10,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private  usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  user;
+  model;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=> {
-      alert(params.id)
+      this.usersService.getById(params.id).subscribe(user => {
+        this.user=user});
+      // alert(params.id)
     })
+
+    console.log(this.user);
+  }
+
+  saveChanges(userCreationDto: userCreationDto){
+    console.log(userCreationDto);
+    this.router.navigate(['/users']);
   }
 
 }
