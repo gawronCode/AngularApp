@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
-import { userDTO } from './users.model';
+import { IuserDTO } from './users.model';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +9,7 @@ import { userDTO } from './users.model';
 })
 export class UsersComponent implements OnInit {
 
-  users: userDTO[];
+  users: IuserDTO[];
 
   constructor(private  usersService: UsersService, private changeDetector: ChangeDetectorRef) { }
 

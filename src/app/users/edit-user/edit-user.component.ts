@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { userCreationDto, userDTO } from '../users.model';
+import { IuserCreationDTO, userDTO, IuserDTO, userCreationDTO } from '../users.model';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -12,22 +12,30 @@ export class EditUserComponent implements OnInit {
 
   constructor(private  usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  user;
-  model;
+  model: IuserCreationDTO;
+  id: number;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=> {
-      this.usersService.getById(params.id).subscribe(user => {
-        this.user=user});
-      // alert(params.id)
-    })
+      this.usersService.getById(params.id).subscribe(data => {
+        this.id = params.id;
+        this.model = {name:data.name,
+                      secondName:data.secondName,
+                      age:data.age,
+                      email:data.email,
+                      phone:data.phone}
 
-    console.log(this.user);
+      });
+      
+    });
+
   }
 
-  saveChanges(userCreationDto: userCreationDto){
-    console.log(userCreationDto);
-    this.router.navigate(['/users']);
+  saveChanges(userCreationDto: IuserCreationDTO){
+    this.usersService.update(userCreationDto, this.id).subscribe(() => {
+      this.router.navigate(['/users']);
+    })
+    
   }
 
 }

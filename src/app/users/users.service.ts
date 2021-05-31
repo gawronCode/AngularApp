@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { userCreationDto, userDTO } from './users.model';
+import { IuserCreationDTO, IuserDTO } from './users.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,19 +18,19 @@ export class UsersService {
   private DeleteURL = environment.apiURL + "/Users/Delete/";
 
 
-  getAll(): Observable<userDTO[]>{
-    return this.httpClient.get<userDTO[]>(this.GetAllURL);
+  getAll(): Observable<IuserDTO[]>{
+    return this.httpClient.get<IuserDTO[]>(this.GetAllURL);
   }
 
-  getById(id:number): Observable<userDTO>{
-    return this.httpClient.get<userDTO>(this.GetByIdURL+id);
+  getById(id:number): Observable<IuserDTO>{
+    return this.httpClient.get<IuserDTO>(this.GetByIdURL+id);
   }
 
-  add(user: userCreationDto){
+  add(user: IuserCreationDTO){
     return this.httpClient.post(this.AddURL, user);
   }
 
-  update(user: userCreationDto, id:number){
+  update(user: IuserCreationDTO, id:number){
     return this.httpClient.put(this.UpdateURL+id, user);
   }
 

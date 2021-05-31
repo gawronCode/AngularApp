@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { userCreationDto } from '../users.model';
+import { IuserCreationDTO } from '../users.model';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class CreateUserComponent implements OnInit {
     
   }
 
-  saveChanges(userCreationDto: userCreationDto){
+  saveChanges(userCreationDto: IuserCreationDTO){
     this.usersService.add(userCreationDto).subscribe(()=>{
       this.router.navigate(['/users']);
     });
