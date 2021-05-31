@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 import { IuserDTO } from './users.model';
 
@@ -11,7 +11,7 @@ export class UsersComponent implements OnInit {
 
   users: IuserDTO[];
 
-  constructor(private  usersService: UsersService, private changeDetector: ChangeDetectorRef) { }
+  constructor(private  usersService: UsersService) { }
 
   ngOnInit(): void {
     this.usersService.getAll().subscribe(users => this.users=users);

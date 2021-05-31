@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-roles-table',
@@ -9,7 +9,14 @@ export class RolesTableComponent implements OnInit {
 
   constructor() { }
 
+  @Output()
+  onDelete: EventEmitter<number> = new EventEmitter<number>();
+
   ngOnInit(): void {
+  }
+
+  delete(id:number){
+    this.onDelete.emit(id);
   }
 
   @Input()

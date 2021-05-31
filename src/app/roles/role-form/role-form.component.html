@@ -1,0 +1,26 @@
+<form (submit)="saveChanges()" [formGroup]="form">
+    <div class="inputDiv">
+        <mat-form-field appearance="outline">
+            <mat-label>Role name*</mat-label>
+            <input formControlName='name' matInput />
+            <mat-error *ngIf="form.invalid">{{getErrorMesageFieldName()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="inputDiv">
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea formControlName='description' matInput placeholder="Description..."></textarea>
+            <!-- <mat-error *ngIf="form.invalid">{{getErrorMesageFieldName()}}</mat-error> -->
+        </mat-form-field>
+    </div>
+    
+    <div class="inputDiv">
+        <div class="btnDiv">
+            <button class="formBtn" mat-flat-button color="primary" [disabled]="form.invalid">Save</button>
+        </div>
+        <div class="btnDiv">
+            <a class="formBtn" mat-flat-button color="warn" routerLink="/roles">Cancel</a>
+        </div>
+    </div>
+
+</form>

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { IuserCreationDTO } from '../users.model';
+
 
 @Component({
   selector: 'app-user-form',
@@ -10,9 +10,10 @@ import { IuserCreationDTO } from '../users.model';
 })
 export class UserFormComponent implements OnInit {
 
-  constructor(private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   form: FormGroup;
+  selected: number = 2;
 
   @Output()
   onSaveChanges: EventEmitter<IuserCreationDTO> = new EventEmitter<IuserCreationDTO>();
@@ -20,8 +21,10 @@ export class UserFormComponent implements OnInit {
   @Input()
   model: IuserCreationDTO;
 
+
+  
+
   ngOnInit(): void {
-    console.log(this.model)
     this.form = this.formBuilder.group({
       name: ['', {
         validators: [Validators.required, Validators.pattern('[A-Z][a-zżźćńółęąś]*'), Validators.minLength(2), Validators.maxLength(20)]
@@ -43,6 +46,7 @@ export class UserFormComponent implements OnInit {
     if (this.model !== undefined){
       this.form.patchValue(this.model);
     }
+
 
   }
 

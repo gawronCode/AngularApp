@@ -16,22 +16,21 @@
     </div>
     <table id="usersTab" *ngIf="users?.length !== 0">
         <tr>
-            <th>Id</th>
-            <th>Imię</th>
-            <th>Nazwisko</th>
-            <th>Wiek</th>
+            <th>Name</th>
+            <th>Second name</th>
+            <th>Age</th>
             <th>Email</th>
-            <th>Telefon</th>
-            <th>Rola</th>
+            <th>Phone</th>
+            <th>Role</th>
         </tr>
         <tr *ngFor="let user of users">
-            <td>{{user.id}}</td>
             <td>{{user.name}}</td>
             <td>{{user.secondName}}</td>
             <td>{{user.age}}</td>
             <td>{{user.email}}</td>
             <td>{{user.phone}}</td>
-            <td>{{user.roleName}}</td> 
+            <td *ngIf="!user.roleName">not assigned</td> 
+            <td *ngIf="user.roleName">{{user.roleName}}</td> 
             <td id="buttons">
                 <div>
                 <a mat-icon-button><mat-icon mat-button routerLink="/users/edit/{{user.id}}">edit</mat-icon></a>

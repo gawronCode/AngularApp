@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import { IroleDTO } from './roles.model';
+import {RolesService} from './roles.service'
 
 @Component({
   selector: 'app-roles',
@@ -8,25 +10,19 @@ import { Input } from '@angular/core';
 })
 export class RolesComponent implements OnInit {
 
-  constructor() { }
+  roles: IroleDTO[];
+
+  constructor(private rolesService: RolesService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      
-      // this.users = []
-      
-      this.roles = [{
-        Id: 1,
-        Name: "Administrator",
-        Description: "Konto z pełnymi uprawnieniami dostępu"
-      },{
-        Id: 2,
-        Name: "Klient",
-        Description: "Konto klienta"
-      }];
-    }, 100);
+    this.rolesService.getAll().subscribe(roles => this.roles=roles);
   }
 
-  roles;
+  delete(id:number){
+    this.rolesService.delete(id).subscribe(()=>{
+      this.ngOnInit();
+    });
+  }
+
 
 }

@@ -17,7 +17,8 @@ import { CreateUserComponent } from './users/create-user/create-user.component';
 import { CreateRoleComponent } from './roles/create-role/create-role.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { EditRoleComponent } from './roles/edit-role/edit-role.component';
-import { UserFormComponent } from './users/user-form/user-form.component'
+import { UserFormComponent } from './users/user-form/user-form.component';
+import { RoleFormComponent } from './roles/role-form/role-form.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UserFormComponent } from './users/user-form/user-form.component'
     CreateRoleComponent,
     EditUserComponent,
     EditRoleComponent,
-    UserFormComponent
+    UserFormComponent,
+    RoleFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IroleDTO } from '../roles.model';
+import { RolesService } from '../roles.service';
 
 @Component({
   selector: 'app-edit-role',
@@ -8,12 +10,31 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditRoleComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private  rolesService: RolesService, private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  model: IroleDTO;
+  id: number;
+
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      alert(params.id)
+    this.activatedRoute.params.subscribe(params=> {
+      this.rolesService.getById(params.id).subscribe(data => {
+        this.id = params.id;
+        this.model = {name:data.name,
+                      description:data.description,
+                      id:data.id}
+
+      });
+      
+    });
+
+  }
+
+  saveChanges(roleDTO: IroleDTO){
+    this.rolesService.update(roleDTO, this.id).subscribe(() => {
+      this.router.navigate(['/roles']);
     })
   }
+
 
 }

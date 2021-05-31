@@ -1,1 +1,4 @@
-<p>edit-role works!</p>
+<div class="formDiv">
+    <h1>Edit role</h1>
+    <app-role-form *ngIf="model" [model]="model" (onSaveChanges)="saveChanges($event)"></app-role-form>
+</div>

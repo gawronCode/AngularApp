@@ -35,7 +35,6 @@ export class EditUserComponent implements OnInit {
     this.usersService.update(userCreationDto, this.id).subscribe(() => {
       this.router.navigate(['/users']);
     })
-    
   }
 
 }
