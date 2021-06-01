@@ -1,6 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IuserCreationDTO, userDTO, IuserDTO, userCreationDTO } from '../users.model';
+import { IroleDTO } from 'src/app/roles/roles.model';
+import { RolesService } from 'src/app/roles/roles.service';
+import { IuserCreationDTO } from '../users.model';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -10,9 +12,12 @@ import { UsersService } from '../users.service';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor(private  usersService: UsersService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private  usersService: UsersService, private rolesService: RolesService,
+    private router: Router, private activatedRoute: ActivatedRoute) { }
 
   model: IuserCreationDTO;
+  roles: IroleDTO[];
+  roleId: number;
   id: number;
 
   ngOnInit(): void {
@@ -23,17 +28,23 @@ export class EditUserComponent implements OnInit {
                       secondName:data.secondName,
                       age:data.age,
                       email:data.email,
-                      phone:data.phone}
-
+                      phone:data.phone,
+                      roleId:data.roleId}
+        this.roleId=data.roleId;
       });
+      this.rolesService.getAll().subscribe(data=>this.roles=data);
       
     });
 
+    
+
   }
 
-  saveChanges(userCreationDto: IuserCreationDTO){
-    this.usersService.update(userCreationDto, this.id).subscribe(() => {
-      this.router.navigate(['/users']);
+  saveChanges(o: {model: IuserCreationDTO, roleId:number}){
+    this.usersService.update(o.model, this.id).subscribe(() => {
+      this.usersService.updateRole(o.roleId, this.id).subscribe(()=>{
+        this.router.navigate(['/users']);
+      })
     })
   }
 

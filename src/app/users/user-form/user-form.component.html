@@ -36,10 +36,12 @@
     </div>
     <div class="inputDiv" id="select">
         <mat-form-field  appearance="outline">
-            <mat-select [(value)]="selected" placeholder="User role">
-                <mat-option value=null>Not assigned</mat-option>
-                <mat-option value=1>Administrator</mat-option>
-                <mat-option value=2>Client</mat-option>
+            <mat-label>User role</mat-label>
+            <mat-select [(value)]="roleId">
+                <mat-option [value]=null>Not assigned</mat-option>
+                <div *ngFor="let role of roles">
+                    <mat-option [value]=role.id>{{role.name}}</mat-option>
+                </div>
             </mat-select>
             <!-- <input formControlName='role'  matInput /> -->
             <!-- <mat-error *ngIf="form.invalid">{{getErrorMesageFieldEmail()}}</mat-error> -->
@@ -54,5 +56,3 @@
         </div>
     </div>
 </form>
-
-<p>selected: {{selected}}</p>

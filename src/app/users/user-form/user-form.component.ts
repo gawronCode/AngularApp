@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IroleDTO } from 'src/app/roles/roles.model';
 import { IuserCreationDTO } from '../users.model';
 
 
@@ -13,16 +14,23 @@ export class UserFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   form: FormGroup;
-  selected: number = 2;
+
 
   @Output()
-  onSaveChanges: EventEmitter<IuserCreationDTO> = new EventEmitter<IuserCreationDTO>();
+  onSaveChanges: EventEmitter<{model: IuserCreationDTO, roleId:number}> = new EventEmitter<{model: IuserCreationDTO, roleId:number}>();
+
+
 
   @Input()
   model: IuserCreationDTO;
 
+  @Input()
+  roleId: number;
 
+  @Input()
+  roles;
   
+
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -47,11 +55,19 @@ export class UserFormComponent implements OnInit {
       this.form.patchValue(this.model);
     }
 
-
   }
 
   saveChanges(){
-    this.onSaveChanges.emit(this.form.value);
+    var userCreationDTO: IuserCreationDTO = {
+      name: this.form.value.name,
+      secondName: this.form.value.secondName,
+      age: this.form.value.age,
+      phone: this.form.value.phone,
+      email: this.form.value.email,
+      roleId: this.roleId
+    }
+    var o = {model: userCreationDTO, roleId: this.roleId};
+    this.onSaveChanges.emit(o);
   }
 
   getErrorMesageFieldName(): string {

@@ -15,6 +15,7 @@ export class UsersService {
   private GetByIdURL = environment.apiURL + "/Users/GetById/";
   private AddURL = environment.apiURL + "/Users/Add";
   private UpdateURL = environment.apiURL + "/Users/Update/";
+  private UpdateRoleURL = environment.apiURL + "/Users/UpdateRole/";
   private DeleteURL = environment.apiURL + "/Users/Delete/";
 
 
@@ -32,6 +33,11 @@ export class UsersService {
 
   update(user: IuserCreationDTO, id:number){
     return this.httpClient.put(this.UpdateURL+id, user);
+  }
+
+  updateRole(roleId:number, id:number){
+    console.log(roleId+","+id)
+    return this.httpClient.put(this.UpdateRoleURL+id, {"roleId": roleId});
   }
 
   delete(id:number){

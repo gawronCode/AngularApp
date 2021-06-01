@@ -1,4 +1,4 @@
 <div class="formDiv">
     <h1>Edit user</h1>
-    <app-user-form *ngIf="model" [model]="model" (onSaveChanges)="saveChanges($event)"></app-user-form>
+    <app-user-form *ngIf="model&&roles" [model]="model" [roleId]="roleId" [roles]="roles" (onSaveChanges)="saveChanges($event)"></app-user-form>
 </div>

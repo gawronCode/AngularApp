@@ -1,4 +1,4 @@
 <div class="formDiv">
     <h1>Add user</h1>
-    <app-user-form (onSaveChanges)="saveChanges($event)"></app-user-form>
+    <app-user-form [roles]="roles" (onSaveChanges)="saveChanges($event)"></app-user-form>
 </div>
